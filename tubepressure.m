@@ -1,4 +1,4 @@
-% Testing the effect of different tube pressures
+d t% Testing the effect of different tube pressures
 % on a pair of long, rectangular airskates
 
 % Physical constants
@@ -34,7 +34,7 @@ alpha = sqrt(12*k./(H.^3*D));          % Dimensionless parameter "alpha"
 A = n*L*W;                              % Total skate area [m^2]
 
 % Required skate pressure as a function of tube pressure [Pa]
-P0_needed = F./(n*L*(W-2./alpha.*tanh(alpha.*W/2))) + P_tube;
+P0_needed = (m_pod*g)./(n*L*(W-2./alpha.*tanh(alpha.*W/2))) + P_tube;
 
 % Flow rate as a function of tube pressure [Pa]
 m_flow = (M_air/(R*T)).*...
