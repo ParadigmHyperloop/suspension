@@ -8,3 +8,7 @@ are used in ``twoskis.m``.
 ## twoskis.m
 MATLAB code for simulating the lift, flow rate, and frequency of vibration for a
 pair of long, rectangular air skates.
+
+## tubepressure.m
+MATLAB code for simulating the effect of different tube pressures on the
+required skate pressure, flow rate, and expected frequency of oscillation.
