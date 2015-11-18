@@ -1,4 +1,4 @@
-d t% Testing the effect of different tube pressures
+% Testing the effect of different tube pressures
 % on a pair of long, rectangular airskates
 
 % Physical constants
