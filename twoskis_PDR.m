@@ -1,22 +1,21 @@
 % Simulates a pair of long, rectangular airskates
 
 % Skate parameters
-k = 8e-8*(2.54e-2)^2;   % Air permeability [m^2]
-D = 0.187*2.54e-2;      % Thickness of porous layer [m]
-P0 = 11e3;              % Internal pressure of the skate [Pa]
+k = 1.8e-8*(2.54e-2)^2;   % Air permeability [m^2]
+D = 0.250*2.54e-2;      % Thickness of porous layer [m]
 n = 2;                  % Number of skates
 W = 0.3048;             % Skate width [m]
 L = 16*0.3048;          % Skate length [m]
 T = 400;                % Nominal temperature of air through skate [K]
 
 % Independent variable - Gap height
-H = linspace(0,1500e-6,1e3); % Gap height [m]
+H = linspace(0,1000e-6,1e3); % Gap height [m]
 
 % Other system parameters
 P_supp = 2.1e3;        % Pressure of supply air to skate compressor [Pa]
 T_supp = 300;          % Temperature of supply air to skate compressor [K]
-P_tube = 99;           % Tube pressure [Pa]
-m_pod = [500 1000 1500];  % Pod mass [kg]
+P_tube = 200e2;        % Tube pressure [Pa]
+m_pod = 3000;          % Pod mass [kg]
 
 % Physical constants
 M_air = 28.97e-3;     % Molecular weight of air [kg/mol]
@@ -29,6 +28,7 @@ mu = 0.01827e-3*(291.15+120)/(T+120)... % Viscosity of air [Pa*s]
   *(T/291.15)^(1.5);
 alpha =  sqrt(12*k./(H.^3*D));          % Dimensionless parameter "alpha"
 A = n*L*W;                              % Total skate area [m^2]
+P0 = 2*m_pod*g/A;                         % Skate pressure [Pa]
 
 % Force as a function of gap height [N]
 F = n*L*P0*(W-2./alpha.*tanh(alpha.*W/2));
