@@ -37,10 +37,8 @@ P0 = 2*m_pod*g/A;      % Skate pressure [Pa]
 gamma = 1.4;          % Heat capacity ratio (1.4 for ideal gas)
 T_out = T_supp*(P0/P_tank)^((1.4-1)/1.4);   % Temperature of air to skates,
                                             % assuming Joule-Thompson effect [K]
-
 % Viscosity of air via Sutherland's relation [Pa*s]
 mu = 18.27e-6*(T_out/291.15)^(3/2)*(291.15+120)/(T_out+120);
-disp(mu)
 alpha =  sqrt(12*k./(H.^3*D));          % Dimensionless parameter "alpha"
 
 % Force as a function of gap height [N]
